@@ -1,0 +1,36 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<title>Display Contacts</title>
+</head>
+
+<body>
+<section>
+<table class="table table-bordered">
+	<tr>
+		<th> name </th>
+		<th>work</th>
+		<th> email </th>
+		<th>phone</th>
+		<th> description </th>
+		<th> image </th>
+		<th> action</th>
+	</tr>
+	<tr th:each="contact: ${listContact}">
+	<td th:text="${contact.name}"/>
+	<td th:text="${contact.work}"/>
+	<td th:text="${contact.email}"/>
+	<td th:text="${contact.phone}"/>
+	<td th:text="${contact.image}"/>
+	<td th:text="${contact.description}"/>
+	<td>
+	<a th:href="@{/user/editC/{cId}(cId=${contact.cId})}">Update</a>
+	<a th:href="@{/user/deleteC/{cId}(cId=${contact.cId})}">Delete</a>
+	</td>
+	
+	</tr>
+</table>
+</section>
+</body>
+
+</html>

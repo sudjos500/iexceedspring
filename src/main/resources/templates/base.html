@@ -1,0 +1,33 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:fragment="layout(content)">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script th:src="@{/js/bootstrap.min.js}"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" th:href="@{/}">SCUBES</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a th:href="@{/}">Home</a></li>
+      <li><a th:href="@{/login}">Login</a></li>
+      <li><a th:href="@{/register}">Register</a></li>
+      <li><a th:href="@{/user/contactmanager}">Contact Manager</a></li>
+      <li><a th:href="@{/display}">RegDisplay</a></li>
+      <li><a th:href="@{user/displays}">ContDisplay</a></li>
+    </ul>
+  </div>
+</nav>
+  
+
+<div th:replace="${content}"></div> 
+
+</body>
+</html>
